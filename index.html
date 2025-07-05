@@ -2,26 +2,13 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Ana Sayfa</title>
+  <title>Yönlendirme Sayfası</title>
+  <script>
+    // Sayfa yüklendiğinde icerik.html'e yönlendir
+    window.location.href = "public/index.html";
+  </script>
 </head>
 <body>
-
-<h1>Sayfa Başlığı</h1>
-
-<!-- İçerik buraya yüklenecek -->
-<div id="icerik"></div>
-
-<script>
-  // Sayfa yüklendiğinde çalışır
-  window.addEventListener("DOMContentLoaded", function () {
-    fetch("public/index.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("icerik").innerHTML = data;
-      })
-      .catch(error => console.error("Hata:", error));
-  });
-</script>
-
+  <p>Yönlendiriliyorsunuz...</p>
 </body>
 </html>
