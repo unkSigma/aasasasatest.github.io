@@ -2,12 +2,26 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Iframe Örneği</title>
+  <title>Ana Sayfa</title>
 </head>
 <body>
 
-  <!-- iframe burada başka HTML dosyasını yüklüyor -->
-  <iframe src="public/index.html"></iframe>
+<h1>Sayfa Başlığı</h1>
+
+<!-- İçerik buraya yüklenecek -->
+<div id="icerik"></div>
+
+<script>
+  // Sayfa yüklendiğinde çalışır
+  window.addEventListener("DOMContentLoaded", function () {
+    fetch("public/index.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("icerik").innerHTML = data;
+      })
+      .catch(error => console.error("Hata:", error));
+  });
+</script>
 
 </body>
 </html>
